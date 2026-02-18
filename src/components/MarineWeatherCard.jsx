@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Waves, ThermometerSide } from 'lucide-react';
+import { Anchor, Waves, Thermometer } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const MarineWeatherCard = ({ data }) => {
@@ -37,7 +37,7 @@ const MarineWeatherCard = ({ data }) => {
                     </div>
                 </div>
                 <div className="bg-white/5 p-4 rounded-2xl border border-white/5 flex items-center gap-4">
-                    <ThermometerSide className="w-6 h-6 text-blue-400" />
+                    <Thermometer className="w-6 h-6 text-blue-400" />
                     <div>
                         <p className="text-white/40 text-[10px] font-bold uppercase">Water Temp</p>
                         <p className="text-xl font-bold text-white">{data.marine.water_temp}°C</p>
