@@ -25,18 +25,14 @@ function App() {
 
             <main className="relative pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
                 <div className="mb-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-center mb-8"
-                    >
+                    <div className="text-center mb-8">
                         <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter">
                             Sky<span className="text-cyan-400">Glass</span>
                         </h1>
                         <p className="text-slate-400 max-w-md mx-auto font-medium">
                             Real-time weather insights with modern glass-morphic design.
                         </p>
-                    </motion.div>
+                    </div>
 
                     <SearchBar onSearch={search} recentSearches={recentSearches} />
                 </div>
@@ -72,8 +68,8 @@ function App() {
                             </div>
 
                             <div className="space-y-8">
-                                <HistoricalWeatherCard data={data} />
-                                <MarineWeatherCard data={data} />
+                                {data.historical && <HistoricalWeatherCard data={data} />}
+                                {data.marine && <MarineWeatherCard data={data} />}
                             </div>
                         </motion.div>
                     ) : (

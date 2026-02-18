@@ -35,8 +35,8 @@ const WeatherCard = ({ data }) => {
                     <div className="flex items-center gap-6">
                         <div className="w-24 h-24 bg-gradient-to-br from-white/20 to-white/5 rounded-2xl p-4 shadow-inner flex items-center justify-center border border-white/10">
                             <img
-                                src={current.weather_icons[0]}
-                                alt={current.weather_descriptions[0]}
+                                src={current.weather_icons?.[0]}
+                                alt={current.weather_descriptions?.[0]}
                                 className="w-full h-full object-contain filter drop-shadow-lg"
                             />
                         </div>
