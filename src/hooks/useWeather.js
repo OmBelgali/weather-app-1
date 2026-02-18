@@ -69,7 +69,9 @@ export const useWeather = (initialCity = '') => {
                 historical: historicalData,
                 marine: marineData,
             });
-            saveToRecent(currentData.location.name);
+            if (currentData?.location?.name) {
+                saveToRecent(currentData.location.name);
+            }
         } catch (err) {
             setError(err.message || 'An unexpected error occurred');
             setData({ current: null, historical: null, marine: null });
