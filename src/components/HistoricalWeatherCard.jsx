@@ -3,10 +3,10 @@ import { Calendar, Thermometer } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const HistoricalWeatherCard = ({ data }) => {
-    if (!data || !data.historical) return null;
+    if (!data || !data.historical || !data.historical.historical) return null;
 
-    const dateKey = Object.keys(data.historical)[0];
-    const history = data.historical[dateKey];
+    const dateKey = Object.keys(data.historical.historical)[0];
+    const history = data.historical.historical[dateKey];
 
     return (
         <motion.div

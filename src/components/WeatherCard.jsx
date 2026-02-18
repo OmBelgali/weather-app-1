@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const WeatherCard = ({ data }) => {
     if (!data || !data.current) return null;
 
-    const { current, location } = data;
+    const { current, location } = data.current;
 
     return (
         <motion.div
