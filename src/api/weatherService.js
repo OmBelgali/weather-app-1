@@ -1,13 +1,20 @@
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_WEATHERSTACK_API_KEY;
-const BASE_URL = 'http://api.weatherstack.com';
+const BASE_URL = '/api/weather';
 
 const weatherApi = axios.create({
     baseURL: BASE_URL,
-    params: {
+});
+
+// We add access_key to every request via interceptor or manually in each call
+// Interceptor is cleaner for proxying
+weatherApi.interceptors.request.use((config) => {
+    config.params = {
+        ...config.params,
         access_key: API_KEY,
-    },
+    };
+    return config;
 });
 
 export const fetchCurrentWeather = async (query) => {
